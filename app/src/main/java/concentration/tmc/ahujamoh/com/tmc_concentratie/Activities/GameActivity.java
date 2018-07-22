@@ -67,6 +67,7 @@ public class GameActivity extends AppCompatActivity {
         mChronometer = (Chronometer) findViewById(R.id.chronometer);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.gameConstraintLayout);
+        mRecyclerViewAdapter = new RecyclerViewAdapter(this);
     }
 
     private void getImages(){
@@ -95,6 +96,8 @@ public class GameActivity extends AppCompatActivity {
 
                             Collections.shuffle(combinedList);
 
+                            mRecyclerViewAdapter.setPhotoList(combinedList);
+                            mRecyclerView.setAdapter(mRecyclerViewAdapter);
                         }
                     }
                     else{
