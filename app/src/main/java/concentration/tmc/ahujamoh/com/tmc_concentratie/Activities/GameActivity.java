@@ -46,6 +46,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void getImages(){
-        Log.v(TAG, "call retrofit to fetch images here");
+        Log.v(TAG, "call retrofit to fetch images here"); //TODO: call retrofit
     }
 }
