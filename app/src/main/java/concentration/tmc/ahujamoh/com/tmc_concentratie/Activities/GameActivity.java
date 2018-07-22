@@ -1,8 +1,10 @@
 package concentration.tmc.ahujamoh.com.tmc_concentratie.Activities;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Chronometer;
@@ -62,16 +64,25 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void setUpWidgetVariables() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView); //TODO: set up adapter
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mScoreTextView = (TextView) findViewById(R.id.score_textview);
         mChronometer = (Chronometer) findViewById(R.id.chronometer);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.gameConstraintLayout);
+
+        mRecyclerView.setHasFixedSize(true);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
+        }
+        else{
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 4));
+        }
+
         mRecyclerViewAdapter = new RecyclerViewAdapter(this);
     }
 
     private void getImages(){
-        Log.v(TAG, "call retrofit to fetch images here"); //TODO: call retrofit
+        Log.v(TAG, "call retrofit to fetch images here");
 
         mGalleryCall = RetrofitFlickrAPIClient.call(FlickrAPIEndpoints.class).getPhotosForQuery("cats", 8, 1);
         mGalleryCall.enqueue(new Callback<Gallery>() {
