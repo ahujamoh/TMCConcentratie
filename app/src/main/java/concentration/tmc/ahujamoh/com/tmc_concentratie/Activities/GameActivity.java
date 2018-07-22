@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import concentration.tmc.ahujamoh.com.tmc_concentratie.Adapters.RecyclerViewAdapter;
 import concentration.tmc.ahujamoh.com.tmc_concentratie.ImageDownloader.FlickrAPIEndpoints;
 import concentration.tmc.ahujamoh.com.tmc_concentratie.ImageDownloader.RetrofitFlickrAPIClient;
 import concentration.tmc.ahujamoh.com.tmc_concentratie.Models.Gallery;
@@ -27,6 +28,7 @@ public class GameActivity extends AppCompatActivity {
     public static final String TAG = GameActivity.class.getSimpleName();
 
     private RecyclerView mRecyclerView;
+    private RecyclerViewAdapter mRecyclerViewAdapter;
     private TextView mScoreTextView;
     private Chronometer mChronometer;
     private ProgressBar mProgressBar;
