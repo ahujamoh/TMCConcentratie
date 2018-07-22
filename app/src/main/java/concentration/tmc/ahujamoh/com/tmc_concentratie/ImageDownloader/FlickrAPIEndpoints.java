@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 public interface FlickrAPIEndpoints {
 
     @GET("?method=flickr.photos.search")
-    Call<Gallery> getPhotosForCats(@Query("text") String query,
+    Call<Gallery> getPhotosForQuery(@Query("text") String query,
                                     @Query("per_page") int perPage,
                                     @Query("page") int page);
 }

@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitFlickrAPIClient {
     private static final String TAG = RetrofitFlickrAPIClient.class.getSimpleName();
-    private static String API_KEY = "APIKEY";
+    private static String API_KEY = "eec93a2b3390c8735ab2e6671612de59";
     public static final String BASE_URL = "https://api.flickr.com/services/rest/";
     // https://api.flickr.com/services/rest/?method=flickr.photos.search
 
