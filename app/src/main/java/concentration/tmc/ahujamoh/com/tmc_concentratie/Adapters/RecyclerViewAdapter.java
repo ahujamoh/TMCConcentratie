@@ -45,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         notifyDataSetChanged();
     }
 
-    public class RecyclerViewCell extends RecyclerView.ViewHolder{
+    public class RecyclerViewCell extends RecyclerView.ViewHolder implements View.OnClickListener {
         private Gallery.Photo mPhoto;
         private ImageView mImageView;
 
@@ -56,6 +56,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public void bind(Gallery.Photo photo) {
             mPhoto = photo;
+        }
+
+        @Override
+        public void onClick(View view) {
+            flipCell(mImageView);
+        }
+
+        private void flipCell(final ImageView imageView) {
         }
     }
 }
